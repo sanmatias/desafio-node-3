@@ -8,7 +8,7 @@ const getAll = async () =>{
 }
 
 const insert = async (datos) =>{
-    const consulta = 'INSERT INTO posts (titulo,img,descipcion,likes) VALUES ($1, $2, $3,$4) RETURNING *'
+    const consulta = 'INSERT INTO posts (titulo,img,descripcion,likes) VALUES ($1, $2, $3,$4) RETURNING *'
     const {rows} = await pool.query(consulta,[datos.titulo ,datos.url,datos.descripcion,datos.likes])
     return rows[0];
 }
